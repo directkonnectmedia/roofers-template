@@ -26,11 +26,14 @@ const HOME_REVIEW_SLIDES = [
     meta: 'Phoenix, AZ · Emergency repair',
   },
   {
-    photo: GALLERY_PHOTOS[5],
+    photo: {
+      src: 'https://images.pexels.com/photos/691637/pexels-photo-691637.jpeg?auto=compress&cs=tinysrgb&w=1920',
+      alt: 'Single-family home with new terracotta clay roofing tiles.',
+    },
     quote:
-      'Standing seam went up fast, lines are laser straight, and attic temps dropped the first week.',
+      'New clay barrel tiles, drip-edge detail, and rake trim finished ahead of our HOA inspector.',
     author: 'James M.',
-    meta: 'Chandler, AZ · Metal retrofit',
+    meta: 'Chandler, AZ · Tile upgrade',
   },
   {
     photo: GALLERY_PHOTOS[2],
@@ -69,26 +72,6 @@ function ReviewStarsFive() {
   )
 }
 
-function ServiceRoofIcon() {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="32"
-      height="32"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <path d="M3 13l9-9 9 9" />
-      <path d="M5 11v10h14V11" />
-      <path d="M10 21v-6h4v6" />
-    </svg>
-  )
-}
 
 const Home = (props) => {
   const [wizardOpen, setWizardOpen] = useState(false)
@@ -122,10 +105,6 @@ const Home = (props) => {
             <div className="hero-overlay"></div>
           </div>
           <div className="hero-content">
-            <div className="hero-logo" aria-hidden="true">
-              <span className="hero-logo-text">Slate Peak</span>
-              <span className="hero-logo-accent">Roofing</span>
-            </div>
             <h1 id="hero-heading" className="home-hero-title hero-title">
               <span className="hero-brand-line">Slate Peak Roofing</span>
               <span className="hero-tagline-line">
@@ -212,41 +191,27 @@ const Home = (props) => {
             <div className="service-card">
               <div className="service-image">
                 <img
-                  src="https://images.pexels.com/photos/2210274/pexels-photo-2210274.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"
-                  alt="Crew installing vibrant asphalt shingles on a pitched roof."
+                  src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920"
+                  alt="Suburban residence with charcoal asphalt shingle roofing."
+                  className="service-photo-frame"
                 />
               </div>
-              <div className="service-content">
-                <div className="service-card-head">
-                  <div className="service-card-icon">
-                    <ServiceRoofIcon />
-                  </div>
-                  <h3 className="section-subtitle">
-                    Asphalt shingle roofing
-                  </h3>
-                </div>
-                <p className="section-content service-blurb">
-                  Architectural laminate · drip edge · uplift clips · vented ridges.
-                </p>
+              <div className="service-content service-content-headline-only">
+                <h3 className="section-subtitle">
+                  Asphalt shingle roofing
+                </h3>
               </div>
             </div>
             <div className="service-card">
               <div className="service-image">
                 <img
-                  src="https://images.pexels.com/photos/439416/pexels-photo-439416.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"
-                  alt="Industrial metal roof cladding in bright daylight."
+                  src="https://images.pexels.com/photos/2102588/pexels-photo-2102588.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920"
+                  alt="Residential home with modern gray standing-seam metal roof."
+                  className="service-photo-frame"
                 />
               </div>
-              <div className="service-content">
-                <div className="service-card-head">
-                  <div className="service-card-icon">
-                    <ServiceRoofIcon />
-                  </div>
-                  <h3 className="section-subtitle">Metal roofing</h3>
-                </div>
-                <p className="section-content service-blurb">
-                  Standing seam · cool coatings · thermal blocks · wind clips.
-                </p>
+              <div className="service-content service-content-headline-only">
+                <h3 className="section-subtitle">Metal roofing</h3>
               </div>
             </div>
             <div className="service-card">
@@ -254,18 +219,11 @@ const Home = (props) => {
                 <img
                   src="https://images.pexels.com/photos/11467876/pexels-photo-11467876.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
                   alt="Tile roof installation"
+                  className="service-photo-frame"
                 />
               </div>
-              <div className="service-content">
-                <div className="service-card-head">
-                  <div className="service-card-icon">
-                    <ServiceRoofIcon />
-                  </div>
-                  <h3 className="section-subtitle">Tile roofing</h3>
-                </div>
-                <p className="section-content service-blurb">
-                  Clay &amp; concrete · uplift mortar · bird stops · sealed valleys.
-                </p>
+              <div className="service-content service-content-headline-only">
+                <h3 className="section-subtitle">Tile roofing</h3>
               </div>
             </div>
             <div className="service-card">
@@ -273,18 +231,11 @@ const Home = (props) => {
                 <img
                   src="https://images.pexels.com/photos/33501308/pexels-photo-33501308.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
                   alt="Roof leak repair technician"
+                  className="service-photo-frame"
                 />
               </div>
-              <div className="service-content">
-                <div className="service-card-head">
-                  <div className="service-card-icon">
-                    <ServiceRoofIcon />
-                  </div>
-                  <h3 className="section-subtitle">Emergency repairs</h3>
-                </div>
-                <p className="section-content service-blurb">
-                  Tarp &amp; dry-in · leak tracing · insurer-ready photo logs.
-                </p>
+              <div className="service-content service-content-headline-only">
+                <h3 className="section-subtitle">Emergency repairs</h3>
               </div>
             </div>
           </div>
@@ -581,7 +532,10 @@ const Home = (props) => {
             </a>
           </div>
         </section>
-        <section id="estimate-wizard" className="wizard-teaser-section">
+        <section
+          id="estimate-wizard"
+          className="wizard-teaser-section wizard-teaser-section--roof-pattern"
+        >
           <div className="section-container">
             <div className="wizard-card">
               <div className="wizard-header">
