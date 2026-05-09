@@ -10,6 +10,29 @@ import EstimateWizard from '../components/estimate-wizard'
 import SlowCarousel from '../components/slow-carousel'
 import GALLERY_PHOTOS from '../lib/gallery-photos'
 
+const ROOF_SYSTEM_CARDS = [
+  {
+    key: 'asphalt',
+    src: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1920&q=80',
+    alt: 'Single-family home with dimensional asphalt shingle roof in sunshine.',
+  },
+  {
+    key: 'metal',
+    src: 'https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1920',
+    alt: 'Residential house with gray standing-seam metal roof.',
+  },
+  {
+    key: 'tile',
+    src: 'https://images.pexels.com/photos/11467876/pexels-photo-11467876.jpeg?auto=compress&cs=tinysrgb&w=1500',
+    alt: 'Clay tile roof on a home exterior.',
+  },
+  {
+    key: 'emergency',
+    src: 'https://images.pexels.com/photos/33501308/pexels-photo-33501308.jpeg?auto=compress&cs=tinysrgb&w=1500',
+    alt: 'Roof repair specialist inspecting storm damage.',
+  },
+]
+
 const HOME_REVIEW_SLIDES = [
   {
     photo: GALLERY_PHOTOS[0],
@@ -106,7 +129,14 @@ const Home = (props) => {
           </div>
           <div className="hero-content">
             <h1 id="hero-heading" className="home-hero-title hero-title">
-              <span className="hero-brand-line">Slate Peak Roofing</span>
+              <span className="hero-brand-line">
+                <span className="hero-brand-word hero-brand-word--white">
+                  Slate Peak
+                </span>{' '}
+                <span className="hero-brand-word hero-brand-word--red">
+                  Roofing
+                </span>
+              </span>
               <span className="hero-tagline-line">
                 Heavy-duty roofing solutions
               </span>
@@ -187,57 +217,82 @@ const Home = (props) => {
               Four crews. Zero fluff. Punch-list ready every time.
             </p>
           </div>
-          <div className="services-grid-chunk">
-            <div className="service-card">
-              <div className="service-image">
-                <img
-                  src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80"
-                  alt="Residential home with asphalt shingle roof and clean exterior."
-                  className="service-photo-frame service-photo-frame--asphalt"
-                />
-              </div>
-              <div className="service-content service-content-headline-only">
-                <h3 className="section-subtitle">
-                  Asphalt shingle roofing
-                </h3>
-              </div>
-            </div>
-            <div className="service-card">
-              <div className="service-image">
-                <img
-                  src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?auto=format&fit=crop&w=1920&q=80"
-                  alt="Modern residential home with gray metal roof and full facade."
-                  className="service-photo-frame service-photo-frame--metal"
-                />
-              </div>
-              <div className="service-content service-content-headline-only">
-                <h3 className="section-subtitle">Metal roofing</h3>
-              </div>
-            </div>
-            <div className="service-card">
-              <div className="service-image">
-                <img
-                  src="https://images.pexels.com/photos/11467876/pexels-photo-11467876.jpeg?auto=compress&cs=tinysrgb&w=1500"
-                  alt="Tile roof installation"
-                  className="service-photo-frame"
-                />
-              </div>
-              <div className="service-content service-content-headline-only">
-                <h3 className="section-subtitle">Tile roofing</h3>
-              </div>
-            </div>
-            <div className="service-card">
-              <div className="service-image">
-                <img
-                  src="https://images.pexels.com/photos/33501308/pexels-photo-33501308.jpeg?auto=compress&cs=tinysrgb&w=1500"
-                  alt="Roof leak repair technician"
-                  className="service-photo-frame"
-                />
-              </div>
-              <div className="service-content service-content-headline-only">
-                <h3 className="section-subtitle">Emergency repairs</h3>
-              </div>
-            </div>
+          <div className="services-carousel-shell">
+            <SlowCarousel
+              autoplayMs={9000}
+              labelNext="Show next roof system"
+              className="gallery-preview-carousel services-preview-carousel"
+              slides={[
+                <figure
+                  key="asphalt"
+                  className="gallery-carousel-card services-carousel-card"
+                >
+                  <div className="gallery-carousel-photo-wrap">
+                    <img
+                      src={ROOF_SYSTEM_CARDS[0].src}
+                      alt={ROOF_SYSTEM_CARDS[0].alt}
+                      loading="lazy"
+                      className="service-photo-frame service-photo-frame--asphalt"
+                    />
+                  </div>
+                  <figcaption className="gallery-carousel-caption services-carousel-caption">
+                    <h3 className="service-carousel-headline">
+                      Asphalt shingle roofing
+                    </h3>
+                  </figcaption>
+                </figure>,
+                <figure
+                  key="metal"
+                  className="gallery-carousel-card services-carousel-card"
+                >
+                  <div className="gallery-carousel-photo-wrap">
+                    <img
+                      src={ROOF_SYSTEM_CARDS[1].src}
+                      alt={ROOF_SYSTEM_CARDS[1].alt}
+                      loading="lazy"
+                      className="service-photo-frame service-photo-frame--metal"
+                    />
+                  </div>
+                  <figcaption className="gallery-carousel-caption services-carousel-caption">
+                    <h3 className="service-carousel-headline">Metal roofing</h3>
+                  </figcaption>
+                </figure>,
+                <figure
+                  key="tile"
+                  className="gallery-carousel-card services-carousel-card"
+                >
+                  <div className="gallery-carousel-photo-wrap">
+                    <img
+                      src={ROOF_SYSTEM_CARDS[2].src}
+                      alt={ROOF_SYSTEM_CARDS[2].alt}
+                      loading="lazy"
+                      className="service-photo-frame"
+                    />
+                  </div>
+                  <figcaption className="gallery-carousel-caption services-carousel-caption">
+                    <h3 className="service-carousel-headline">Tile roofing</h3>
+                  </figcaption>
+                </figure>,
+                <figure
+                  key="emergency"
+                  className="gallery-carousel-card services-carousel-card"
+                >
+                  <div className="gallery-carousel-photo-wrap">
+                    <img
+                      src={ROOF_SYSTEM_CARDS[3].src}
+                      alt={ROOF_SYSTEM_CARDS[3].alt}
+                      loading="lazy"
+                      className="service-photo-frame"
+                    />
+                  </div>
+                  <figcaption className="gallery-carousel-caption services-carousel-caption">
+                    <h3 className="service-carousel-headline">
+                      Emergency repairs
+                    </h3>
+                  </figcaption>
+                </figure>,
+              ]}
+            />
           </div>
         </section>
         <section className="trust-stats-section">
