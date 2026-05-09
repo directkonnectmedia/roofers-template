@@ -3,15 +3,71 @@ import Head from 'next/head'
 import Link from 'next/link'
 
 import Script from 'dangerous-html/react'
-import { useTranslations } from 'next-intl'
 
 import Navigation from '../components/navigation'
 import Footer from '../components/footer'
 import EstimateWizard from '../components/estimate-wizard'
-import PhotoGallery from '../components/photo-gallery'
+import SlowCarousel from '../components/slow-carousel'
 import GALLERY_PHOTOS from '../lib/gallery-photos'
 
-const HOMEPAGE_PREVIEW_PHOTOS = GALLERY_PHOTOS.slice(0, 4)
+const HOME_REVIEW_SLIDES = [
+  {
+    photo: GALLERY_PHOTOS[0],
+    quote:
+      'Crew was surgical on the tear-off, flashings, and final walk — the asphalt install still looks showroom-clean.',
+    author: 'Robert Thompson',
+    meta: 'Scottsdale, AZ · Full replacement',
+  },
+  {
+    photo: GALLERY_PHOTOS[8],
+    quote:
+      'Monsoon damage on a Friday night. Tarp crew + repair plan before sunrise — insurance photos included.',
+    author: 'Sarah L.',
+    meta: 'Phoenix, AZ · Emergency repair',
+  },
+  {
+    photo: GALLERY_PHOTOS[5],
+    quote:
+      'Standing seam went up fast, lines are laser straight, and attic temps dropped the first week.',
+    author: 'James M.',
+    meta: 'Chandler, AZ · Metal retrofit',
+  },
+  {
+    photo: GALLERY_PHOTOS[2],
+    quote:
+      'Tile layout, drip edge, and scuppers dialed for HOA approvals — superintendent was on-site daily.',
+    author: 'Emily R.',
+    meta: 'Gilbert, AZ · Tile reroof',
+  },
+  {
+    photo: GALLERY_PHOTOS[3],
+    quote:
+      'Phased crane days on an occupied plaza — zero leaks through TPO weld inspections and finals.',
+    author: 'Marcus Vega',
+    meta: 'Tempe, AZ · Commercial membrane',
+  },
+]
+
+function ReviewStarsFive() {
+  const d =
+    'M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.12 2.12 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.12 2.12 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.12 2.12 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.12 2.12 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.12 2.12 0 0 0 1.597-1.16z'
+  return (
+    <div className="review-carousel-stars">
+      {[0, 1, 2, 3, 4].map((i) => (
+        <svg
+          key={i}
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path fill="var(--color-accent)" d={d} />
+        </svg>
+      ))}
+    </div>
+  )
+}
 
 function ServiceRoofIcon() {
   return (
@@ -42,10 +98,10 @@ const Home = (props) => {
     <>
       <div className="home-container1">
         <Head>
-          <title>SlatePeak Roofing | Heavy-duty roofing Arizona</title>
+          <title>Slate Peak Roofing | Heavy-duty roofing Arizona</title>
           <meta
             property="og:title"
-            content="SlatePeak Roofing — Heavy-Duty Roofing Solutions"
+            content="Slate Peak Roofing — Heavy-Duty Roofing Solutions"
           />
           <link rel="canonical" href="https://roofers-template-rho.vercel.app/" />
           <meta
@@ -67,11 +123,11 @@ const Home = (props) => {
           </div>
           <div className="hero-content">
             <div className="hero-logo" aria-hidden="true">
-              <span className="hero-logo-text">SlatePeak</span>
+              <span className="hero-logo-text">Slate Peak</span>
               <span className="hero-logo-accent">Roofing</span>
             </div>
             <h1 id="hero-heading" className="home-hero-title hero-title">
-              <span className="hero-brand-line">SlatePeak Roofing</span>
+              <span className="hero-brand-line">Slate Peak Roofing</span>
               <span className="hero-tagline-line">
                 Heavy-duty roofing solutions
               </span>
@@ -147,18 +203,17 @@ const Home = (props) => {
         </section>
         <section id="services" className="services-chunk-section">
           <div className="carousel-header">
-            <h2 className="section-title">Specialized Roofing Services</h2>
+            <h2 className="section-title">Roof Systems We Install</h2>
             <p className="section-content">
-              Professional roofing solutions tailored to your property — every
-              system below is engineered, installed, and warrantied by our ironclad crew.
+              Four crews. Zero fluff. Punch-list ready every time.
             </p>
           </div>
           <div className="services-grid-chunk">
             <div className="service-card">
               <div className="service-image">
                 <img
-                  src="https://images.pexels.com/photos/33404248/pexels-photo-33404248.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
-                  alt="Asphalt shingle installation"
+                  src="https://images.pexels.com/photos/2210274/pexels-photo-2210274.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"
+                  alt="Crew installing vibrant asphalt shingles on a pitched roof."
                 />
               </div>
               <div className="service-content">
@@ -170,23 +225,16 @@ const Home = (props) => {
                     Asphalt shingle roofing
                   </h3>
                 </div>
-                <p className="section-content">
-                  Versatile, durable, cost-effective membranes for pitched
-                  residential envelopes with Class A fire-ready assemblies when
-                  required.
+                <p className="section-content service-blurb">
+                  Architectural laminate · drip edge · uplift clips · vented ridges.
                 </p>
-                <a href="/#trust-credentials">
-                  <div className="btn-link">
-                    <span>Licensing snapshot</span>
-                  </div>
-                </a>
               </div>
             </div>
             <div className="service-card">
               <div className="service-image">
                 <img
-                  src="https://images.pexels.com/photos/19187101/pexels-photo-19187101.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
-                  alt="Standing seam metal roof"
+                  src="https://images.pexels.com/photos/439416/pexels-photo-439416.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"
+                  alt="Industrial metal roof cladding in bright daylight."
                 />
               </div>
               <div className="service-content">
@@ -196,15 +244,9 @@ const Home = (props) => {
                   </div>
                   <h3 className="section-subtitle">Metal roofing</h3>
                 </div>
-                <p className="section-content">
-                  Architectural standing seam profiles with radiant-barrier-ready
-                  underlayment for Arizona heat loads plus wind-uplift hardware.
+                <p className="section-content service-blurb">
+                  Standing seam · cool coatings · thermal blocks · wind clips.
                 </p>
-                <a href="/gallery">
-                  <div className="btn-link">
-                    <span>Metal gallery</span>
-                  </div>
-                </a>
               </div>
             </div>
             <div className="service-card">
@@ -221,40 +263,9 @@ const Home = (props) => {
                   </div>
                   <h3 className="section-subtitle">Tile roofing</h3>
                 </div>
-                <p className="section-content">
-                  Precision-set clay/concrete assemblies with ASTM-rated flashings —
-                  engineered for uplift and monsoon runoff control.
+                <p className="section-content service-blurb">
+                  Clay &amp; concrete · uplift mortar · bird stops · sealed valleys.
                 </p>
-                <a href="/#reviews">
-                  <div className="btn-link">
-                    <span>Homeowner reactions</span>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div className="service-card">
-              <div className="service-image">
-                <img
-                  src="https://images.pexels.com/photos/6338827/pexels-photo-6338827.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
-                  alt="Flat membrane roofing"
-                />
-              </div>
-              <div className="service-content">
-                <div className="service-card-head">
-                  <div className="service-card-icon">
-                    <ServiceRoofIcon />
-                  </div>
-                  <h3 className="section-subtitle">Flat &amp; low-slope</h3>
-                </div>
-                <p className="section-content">
-                  Reinforced TPO/EPDM build-ups with tapered insulation decks,
-                  crickets, drains, and walk-pad integrations for rooftop MEP traffic.
-                </p>
-                <a href="/#estimate-wizard">
-                  <div className="btn-link">
-                    <span>Plan a rooftop walk</span>
-                  </div>
-                </a>
               </div>
             </div>
             <div className="service-card">
@@ -271,42 +282,9 @@ const Home = (props) => {
                   </div>
                   <h3 className="section-subtitle">Emergency repairs</h3>
                 </div>
-                <p className="section-content">
-                  Rapid leak isolation, uplifted shingle re-secures, fascia
-                  rebuilds — documentation delivered for HOA and insurance filings.
+                <p className="section-content service-blurb">
+                  Tarp &amp; dry-in · leak tracing · insurer-ready photo logs.
                 </p>
-                <a href="/#reviews">
-                  <div className="btn-link">
-                    <span>Emergency case studies</span>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div className="service-card">
-              <div className="service-image">
-                <img
-                  src="https://images.pexels.com/photos/221027/pexels-photo-221027.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
-                  alt="Architect reviewing roof plans"
-                />
-              </div>
-              <div className="service-content">
-                <div className="service-card-head">
-                  <div className="service-card-icon">
-                    <ServiceRoofIcon />
-                  </div>
-                  <h3 className="section-subtitle">
-                    Replacement planning
-                  </h3>
-                </div>
-                <p className="section-content">
-                  Tear-off sequencing, salvage inspections, phased staging for occupied
-                  buildings, and cradle-to-grave waste manifests for LEED-minded owners.
-                </p>
-                <a href="/#process">
-                  <div className="btn-link">
-                    <span>See our playbook</span>
-                  </div>
-                </a>
               </div>
             </div>
           </div>
@@ -394,14 +372,39 @@ const Home = (props) => {
             </div>
           </div>
         </section>
-        <section id="gallery" className="gallery-teaser-section">
+        <section
+          id="gallery"
+          className="gallery-teaser-section gallery-teaser-section--carousel"
+        >
           <div className="gallery-header">
-            <h2 className="section-title">Take a Peek at Our Recent Work</h2>
+            <h2 className="section-title">Recent Work</h2>
             <p className="section-content gallery-intro">
-              A small preview — click any photo to take a closer look.
+              Full gallery of documented jobs — slow scroll or skip ahead with
+              the control.
             </p>
           </div>
-          <PhotoGallery photos={HOMEPAGE_PREVIEW_PHOTOS} variant="preview" />
+          <div className="gallery-carousel-shell">
+            <SlowCarousel
+              autoplayMs={9000}
+              labelNext="Show next project photo"
+              className="gallery-preview-carousel"
+              slides={GALLERY_PHOTOS.map((p) => (
+                <figure key={p.src} className="gallery-carousel-card">
+                  <div className="gallery-carousel-photo-wrap">
+                    <img src={p.src} alt={p.alt} loading="lazy" />
+                  </div>
+                  <figcaption className="gallery-carousel-caption">
+                    {p.tag ? (
+                      <span className="gallery-carousel-tag">{p.tag}</span>
+                    ) : null}
+                    {p.title ? (
+                      <span className="gallery-carousel-title">{p.title}</span>
+                    ) : null}
+                  </figcaption>
+                </figure>
+              ))}
+            />
+          </div>
           <div className="gallery-footer">
             <Link href="/gallery">
               <a className="btn btn-primary btn-lg">
@@ -410,7 +413,10 @@ const Home = (props) => {
             </Link>
           </div>
         </section>
-        <section id="process" className="process-snapshot-section">
+        <section
+          id="process"
+          className="process-snapshot-section process-snapshot-section--heavy"
+        >
           <div className="section-container">
             <div className="process-header">
               <h2 className="section-title">How We Work</h2>
@@ -521,115 +527,43 @@ const Home = (props) => {
           </div>
         </section>
         <section id="reviews" className="testimonials-section">
-          <div className="featured-testimonial">
-            <div className="testimonial-image">
-              <img
-                src="https://images.pexels.com/photos/33404981/pexels-photo-33404981.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
-                alt="Completed Roofing Project"
-              />
-            </div>
-            <div className="testimonial-content">
-              <div className="star-rating-large">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="var(--color-accent)"
-                >
-                  <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.12 2.12 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.12 2.12 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.12 2.12 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.12 2.12 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.12 2.12 0 0 0 1.597-1.16z"></path>
-                </svg>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="var(--color-accent)"
-                >
-                  <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.12 2.12 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.12 2.12 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.12 2.12 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.12 2.12 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.12 2.12 0 0 0 1.597-1.16z"></path>
-                </svg>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="var(--color-accent)"
-                >
-                  <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.12 2.12 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.12 2.12 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.12 2.12 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.12 2.12 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.12 2.12 0 0 0 1.597-1.16z"></path>
-                </svg>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="var(--color-accent)"
-                >
-                  <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.12 2.12 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.12 2.12 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.12 2.12 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.12 2.12 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.12 2.12 0 0 0 1.597-1.16z"></path>
-                </svg>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="var(--color-accent)"
-                >
-                  <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.12 2.12 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.12 2.12 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.12 2.12 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.12 2.12 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.12 2.12 0 0 0 1.597-1.16z"></path>
-                </svg>
-              </div>
-              <blockquote className="testimonial-quote">
-                <span>
-                  &quot;SlatePeak Roofing transformed our home. The crew was
-                  professional, efficient, and the quality of the asphalt
-                  shingle installation is second to none. They handled
-                  everything from the initial inspection to the final cleanup
-                  with incredible care.&quot;
-                </span>
-              </blockquote>
-              <div className="testimonial-author">
-                <span className="author-name">Robert Thompson</span>
-                <span className="author-location">
-                  Scottsdale, AZ · Full Roof Replacement
-                </span>
-              </div>
-            </div>
+          <div className="reviews-section-header">
+            <h2 className="section-title">Real Jobs. Real Verdicts.</h2>
+            <p className="section-content">
+              Every slide pairs the finished roof with what the owner said — same
+              slow rotation and skip control as Recent Work.
+            </p>
           </div>
-          <div className="review-carousel">
-            <div className="review-card">
-              <div className="star-rating-sm">
-                <span>★★★★★</span>
-              </div>
-              <p className="review-text">
-                &quot;Amazing response time after the storm. They had my roof
-                patched within hours.&quot;
-              </p>
-              <div className="review-meta">
-                <span>Sarah L. • Repairs</span>
-              </div>
-            </div>
-            <div className="review-card">
-              <div className="star-rating-sm">
-                <span>★★★★★</span>
-              </div>
-              <p className="review-text">
-                &quot;The metal roof they installed looks fantastic and has
-                already lowered our energy bills.&quot;
-              </p>
-              <div className="review-meta">
-                <span>James M. • Metal Install</span>
-              </div>
-            </div>
-            <div className="review-card">
-              <div className="star-rating-sm">
-                <span>★★★★★</span>
-              </div>
-              <p className="review-text">
-                &quot;Professional, honest, and high quality. Highly recommend
-                SlatePeak for any roofing needs.&quot;
-              </p>
-              <div className="review-meta">
-                <span>Emily R. • Inspection</span>
-              </div>
-            </div>
+          <div className="reviews-carousel-shell">
+            <SlowCarousel
+              autoplayMs={9000}
+              labelNext="Show next review"
+              className="reviews-preview-carousel"
+              slides={HOME_REVIEW_SLIDES.map((r) => (
+                <article
+                  key={r.author}
+                  className="review-carousel-photo-card"
+                >
+                  <div className="review-carousel-photo">
+                    <img
+                      src={r.photo.src}
+                      alt={r.photo.alt}
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="review-carousel-copy">
+                    <ReviewStarsFive />
+                    <blockquote className="review-carousel-quote">
+                      &ldquo;{r.quote}&rdquo;
+                    </blockquote>
+                    <div className="review-carousel-byline">
+                      <span className="review-carousel-name">{r.author}</span>
+                      <span className="review-carousel-meta">{r.meta}</span>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            />
           </div>
           <div className="testimonials-footer">
             <div className="trust-logos">
@@ -790,7 +724,7 @@ opacity: 0;}}
     })
   }, observerOptions)
 
-  document.querySelectorAll(".service-card, .stat-card, .photo-card, .process-step, .review-card, .credential-item").forEach((el) => {
+  document.querySelectorAll(".service-card, .stat-card, .photo-card, .process-step, .credential-item, .gallery-carousel-card, .review-carousel-photo-card").forEach((el) => {
     el.style.opacity = "0"
     el.style.transform = "translateY(20px)"
     el.style.transition = "all 0.6s ease-out"

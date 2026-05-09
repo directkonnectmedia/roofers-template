@@ -2,7 +2,6 @@ import React from 'react'
 import Link from 'next/link'
 
 import Script from 'dangerous-html/react'
-import { useTranslations } from 'next-intl'
 
 const Navigation = (props) => {
   return (
@@ -81,11 +80,11 @@ const Navigation = (props) => {
               <Link href="/">
                 <a>
                   <div
-                    aria-label="SlatePeak Roofing Home"
+                    aria-label="Slate Peak Roofing Home"
                     className="navigation-logo-link"
                   >
                     <div className="navigation-logo-container">
-                      <span className="navigation-logo-text">SlatePeak</span>
+                      <span className="navigation-logo-text">Slate Peak</span>
                       <span className="navigation-logo-accent">Roofing</span>
                     </div>
                   </div>
@@ -125,7 +124,7 @@ const Navigation = (props) => {
                 <a
                   href="tel:+15557663464"
                   className="navigation-header-phone"
-                  aria-label="Call SlatePeak Roofing at (555) 766-3464"
+                  aria-label="Call Slate Peak Roofing at (555) 766-3464"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -173,7 +172,7 @@ const Navigation = (props) => {
           <div id="mobileOverlay" className="navigation-mobile-overlay">
             <div className="navigation-mobile-header">
               <div className="navigation-logo-container">
-                <span className="navigation-logo-text">SlatePeak</span>
+                <span className="navigation-logo-text">Slate Peak</span>
                 <span className="navigation-logo-accent">Roofing</span>
               </div>
               <button
