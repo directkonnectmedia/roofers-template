@@ -189,7 +189,7 @@ const Home = (props) => {
               <p className="credentials-licenses">
                 AZ ROC #334455 · Registrar of Contractors License CR‑42‑123456 ·
                 City of Phoenix Contractor Reg. PCM‑778899 · OSHA 10‑hr trained
-                foremen on every SlatePeak Commercial crew · GL & WC on file —
+                foremen on every Slate Peak Commercial crew · GL & WC on file —
                 certificate available on request.
               </p>
               <p className="credentials-secondary-services">
