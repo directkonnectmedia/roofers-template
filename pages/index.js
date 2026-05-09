@@ -588,7 +588,7 @@ const Home = (props) => {
               <div className="testimonial-author">
                 <span className="author-name">Robert Thompson</span>
                 <span className="author-location">
-                  Fort Worth, TX • Full Roof Replacement
+                  Scottsdale, AZ · Full Roof Replacement
                 </span>
               </div>
             </div>
