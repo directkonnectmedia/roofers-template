@@ -1488,6 +1488,15 @@
   margin-bottom: var(--spacing-lg);
   color: var(--color-roof-white);
 }
+
+.home-hero-title.hero-title {
+  font-size: unset;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.12;
+  text-transform: none;
+  letter-spacing: normal;
+}
  
 .home-hero-subtitle {
   font-size: var(--font-size-xl);
@@ -1905,7 +1914,7 @@
   color: var(--color-accent);
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  font-size: clamp(1.2rem, 2.55vw, 2.125rem);
+  font-size: clamp(1.35rem, 2.75vw, 2.4rem);
   line-height: 1.2;
 }
 
@@ -1923,6 +1932,14 @@
   height: 100%;
   object-fit: cover;
   object-position: center 38%;
+}
+
+.services-grid-chunk img.service-photo-frame--asphalt {
+  object-position: center 32%;
+}
+
+.services-grid-chunk img.service-photo-frame--metal {
+  object-position: center 28%;
 }
 
 .services-grid-chunk .service-image {
@@ -3143,8 +3160,8 @@ html {
   display: block;
   font-family: var(--font-family-heading);
   font-weight: 700;
-  font-size: clamp(3rem, 7.2vw, 4.75rem);
-  letter-spacing: 0.22em;
+  font-size: clamp(3.375rem, 8vw, 5.1rem);
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   opacity: 0.95;
   margin-bottom: 0.35em;
@@ -3156,7 +3173,7 @@ html {
   font-family: var(--font-family-heading);
   font-weight: 700;
   font-size: clamp(1.4rem, 3.325vw, 2.8rem);
-  line-height: 1.06;
+  line-height: 1.08;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--color-roof-white);
@@ -3584,10 +3601,14 @@ html {
   margin-top: var(--spacing-sm);
 }
 
+.gallery-teaser-section--carousel {
+  overflow: visible;
+}
+
 .gallery-carousel-shell {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 var(--spacing-xl);
+  padding: 0 var(--spacing-xl) var(--spacing-2xl);
 }
 
 .gallery-carousel-card {
@@ -3616,6 +3637,7 @@ html {
 }
 
 .gallery-carousel-caption {
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -3649,8 +3671,8 @@ html {
 }
 
 .gallery-preview-carousel .slow-carousel-slides {
-  min-height: clamp(400px, 62vw, 720px);
-  padding-bottom: var(--spacing-lg);
+  min-height: clamp(480px, 70vw, 800px);
+  padding-bottom: var(--spacing-2xl);
 }
 
 .gallery-preview-carousel .gallery-carousel-card {
@@ -3701,6 +3723,7 @@ html {
   height: 100%;
   min-height: 100%;
   object-fit: cover;
+  object-position: center center;
   display: block;
 }
 

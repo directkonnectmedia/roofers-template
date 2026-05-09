@@ -27,8 +27,8 @@ const HOME_REVIEW_SLIDES = [
   },
   {
     photo: {
-      src: 'https://images.pexels.com/photos/691637/pexels-photo-691637.jpeg?auto=compress&cs=tinysrgb&w=1920',
-      alt: 'Single-family home with new terracotta clay roofing tiles.',
+      src: 'https://images.pexels.com/photos/8716850/pexels-photo-8716850.jpeg?auto=compress&cs=tinysrgb&w=1920',
+      alt: 'Colonial-style home with new terracotta clay tile roofing and trimmed eaves.',
     },
     quote:
       'New clay barrel tiles, drip-edge detail, and rake trim finished ahead of our HOA inspector.',
@@ -191,9 +191,9 @@ const Home = (props) => {
             <div className="service-card">
               <div className="service-image">
                 <img
-                  src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920"
-                  alt="Suburban residence with charcoal asphalt shingle roofing."
-                  className="service-photo-frame"
+                  src="https://images.pexels.com/photos/259593/pexels-photo-259593.jpeg?auto=compress&cs=tinysrgb&w=1920"
+                  alt="Residential home with charcoal asphalt shingle roof, full exterior and landscaping visible."
+                  className="service-photo-frame service-photo-frame--asphalt"
                 />
               </div>
               <div className="service-content service-content-headline-only">
@@ -205,9 +205,9 @@ const Home = (props) => {
             <div className="service-card">
               <div className="service-image">
                 <img
-                  src="https://images.pexels.com/photos/2102588/pexels-photo-2102588.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920"
-                  alt="Residential home with modern gray standing-seam metal roof."
-                  className="service-photo-frame"
+                  src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1920"
+                  alt="Modern residential home with gray standing-seam metal roof, trees and full facade."
+                  className="service-photo-frame service-photo-frame--metal"
                 />
               </div>
               <div className="service-content service-content-headline-only">
@@ -217,7 +217,7 @@ const Home = (props) => {
             <div className="service-card">
               <div className="service-image">
                 <img
-                  src="https://images.pexels.com/photos/11467876/pexels-photo-11467876.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
+                  src="https://images.pexels.com/photos/11467876/pexels-photo-11467876.jpeg?auto=compress&cs=tinysrgb&w=1500"
                   alt="Tile roof installation"
                   className="service-photo-frame"
                 />
@@ -229,7 +229,7 @@ const Home = (props) => {
             <div className="service-card">
               <div className="service-image">
                 <img
-                  src="https://images.pexels.com/photos/33501308/pexels-photo-33501308.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
+                  src="https://images.pexels.com/photos/33501308/pexels-photo-33501308.jpeg?auto=compress&cs=tinysrgb&w=1500"
                   alt="Roof leak repair technician"
                   className="service-photo-frame"
                 />
