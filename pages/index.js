@@ -13,6 +13,27 @@ import GALLERY_PHOTOS from '../lib/gallery-photos'
 
 const HOMEPAGE_PREVIEW_PHOTOS = GALLERY_PHOTOS.slice(0, 4)
 
+function ServiceRoofIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="32"
+      height="32"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M3 13l9-9 9 9" />
+      <path d="M5 11v10h14V11" />
+      <path d="M10 21v-6h4v6" />
+    </svg>
+  )
+}
+
 const Home = (props) => {
   const [wizardOpen, setWizardOpen] = useState(false)
   const openWizard = () => setWizardOpen(true)
@@ -21,244 +42,272 @@ const Home = (props) => {
     <>
       <div className="home-container1">
         <Head>
-          <title>Witty Great Lark</title>
-          <meta property="og:title" content="Witty Great Lark" />
-          <link
-            rel="canonical"
-            href="https://witty-great-lark-ibfrif.teleporthq.site/"
+          <title>SlatePeak Roofing | Heavy-duty roofing Arizona</title>
+          <meta
+            property="og:title"
+            content="SlatePeak Roofing — Heavy-Duty Roofing Solutions"
           />
+          <link rel="canonical" href="https://roofers-template-rho.vercel.app/" />
           <meta
             property="og:url"
-            content="https://witty-great-lark-ibfrif.teleporthq.site/"
+            content="https://roofers-template-rho.vercel.app/"
           />
         </Head>
         <Navigation></Navigation>
         <section className="hero-section">
-          <div className="hero-video-wrapper">
-            <video
-              autoPlay="true"
-              muted="true"
-              loop="true"
-              playsInline="true"
-              poster="https://images.pexels.com/videos/4198817/pictures/preview-0.jpg"
-              src="https://videos.pexels.com/video-files/4198817/4198817-hd_1280_720_24fps.mp4"
-            ></video>
+          <div className="hero-media">
+            <img
+              alt="Heavy-duty industrial commercial roofing crew on a membrane roof."
+              src="https://images.pexels.com/photos/834892/pexels-photo-834892.jpeg?auto=compress&cs=tinysrgb&w=1920"
+              className="hero-bg-image"
+              loading="eager"
+            />
+            <div className="hero-grit" aria-hidden="true" />
             <div className="hero-overlay"></div>
           </div>
           <div className="hero-content">
-            <div className="hero-logo" aria-label="SlatePeak Roofing">
+            <div className="hero-logo" aria-hidden="true">
               <span className="hero-logo-text">SlatePeak</span>
               <span className="hero-logo-accent">Roofing</span>
             </div>
-            <h1 className="home-hero-title hero-title">
-              Roofing Done Right. Built to Last.
+            <h1 id="hero-heading" className="home-hero-title hero-title">
+              <span className="hero-brand-line">SlatePeak Roofing</span>
+              <span className="hero-tagline-line">
+                Heavy-duty roofing solutions
+              </span>
             </h1>
             <p className="home-hero-subtitle hero-subtitle">
-              Premium quality craftsmanship backed by industry-leading
-              warranties. We protect what matters most with durable materials
-              and expert installation.
+              Quality, reliability, and expert craftsmanship across Arizona —
+              engineered for extremes, inspected to code, backed by workmanship
+              you can track.
             </p>
-            <div className="hero-actions">
+            <div className="hero-actions hero-actions-centered">
               <button
                 type="button"
                 onClick={openWizard}
-                className="btn btn-accent btn-xl hero-cta-btn"
+                className="btn btn-accent btn-xl hero-cta-primary"
               >
-                <span>Get Your Free Estimate</span>
+                <span>Get an estimate</span>
               </button>
-              <a href="#gallery">
-                <div className="btn btn-xl btn-outline">
-                  <span>View Our Work</span>
-                </div>
-              </a>
             </div>
-            <div className="hero-trust-badges">
-              <div className="trust-item">
-                <span className="trust-number">25+</span>
-                <span className="trust-label">Years in Business</span>
-              </div>
-              <div className="trust-item">
-                <span className="trust-number">5,000+</span>
-                <span className="trust-label">Jobs Completed</span>
-              </div>
-              <div className="trust-item">
-                <div className="star-rating">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="var(--color-accent)"
-                  >
-                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.12 2.12 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.12 2.12 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.12 2.12 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.12 2.12 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.12 2.12 0 0 0 1.597-1.16z"></path>
-                  </svg>
-                  <span className="trust-number">4.9</span>
-                </div>
-                <span className="trust-label">Customer Rating</span>
-              </div>
-              <div className="trust-item">
-                <div className="shield-icon">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  >
-                    <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
-                  </svg>
-                </div>
-                <span className="trust-label">Licensed &amp; Insured</span>
-              </div>
+            <div className="hero-gallery-nudge">
+              <Link href="/gallery">
+                <a className="hero-gallery-link">View our project gallery</a>
+              </Link>
             </div>
           </div>
-          <div className="scroll-hint">
+          <div className="scroll-hint" aria-hidden="true">
             <div className="mouse-icon">
               <div className="mouse-wheel"></div>
             </div>
           </div>
         </section>
-        <section id="services" className="services-carousel-section">
-          <div className="carousel-header">
-            <h2 className="section-title">Our Specialized Services</h2>
-            <p className="section-content">
-              Professional roofing solutions tailored to your property&apos;s
-              specific needs.
+        <section
+          id="trust-credentials"
+          className="credentials-trust-section"
+          aria-labelledby="trust-credentials-heading"
+        >
+          <div className="credentials-inner">
+            <p id="trust-credentials-heading" className="credentials-trust-intro">
+              Licensed crews · OSHA-minded job sites · Local dispatch
             </p>
-          </div>
-          <div className="services-carousel-wrapper">
-            <div id="servicesTrack" className="services-track">
-              <div className="service-card">
-                <div className="service-image">
-                  <img
-                    src="https://images.pexels.com/photos/33404248/pexels-photo-33404248.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
-                    alt="Asphalt Shingle Installation"
-                  />
-                </div>
-                <div className="service-content">
-                  <h3 className="section-subtitle">Asphalt Shingle Roofing</h3>
-                  <p className="section-content">
-                    Versatile, durable, and cost-effective solutions for
-                    residential homes.
-                  </p>
-                  <a href="#">
-                    <div className="btn-link">
-                      <span>Learn More</span>
-                    </div>
-                  </a>
-                </div>
+            <div className="credentials-pills">
+              <div className="credential-item">
+                <span className="credential-num">25+</span>
+                <span className="credential-label">Years in business</span>
               </div>
-              <div className="service-card">
-                <div className="service-image">
-                  <img
-                    src="https://images.pexels.com/photos/19187101/pexels-photo-19187101.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
-                    alt="Metal Roofing Detail"
-                  />
-                </div>
-                <div className="service-content">
-                  <h3 className="section-subtitle">Metal Roofing</h3>
-                  <p className="section-content">
-                    Modern aesthetics combined with exceptional longevity and
-                    energy efficiency.
-                  </p>
-                  <a href="#">
-                    <div className="btn-link">
-                      <span>Learn More</span>
-                    </div>
-                  </a>
-                </div>
+              <div className="credential-item">
+                <span className="credential-num">5,000+</span>
+                <span className="credential-label">Jobs completed</span>
               </div>
-              <div className="service-card">
-                <div className="service-image">
-                  <img
-                    src="https://images.pexels.com/photos/11467876/pexels-photo-11467876.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
-                    alt="Tile Roof Installation"
-                  />
-                </div>
-                <div className="service-content">
-                  <h3 className="section-subtitle">Tile Roofing</h3>
-                  <p className="section-content">
-                    Elegant clay and concrete tiles for timeless beauty and fire
-                    resistance.
-                  </p>
-                  <a href="#">
-                    <div className="btn-link">
-                      <span>Learn More</span>
-                    </div>
-                  </a>
-                </div>
+              <div className="credential-item">
+                <span className="credential-num">4.9</span>
+                <span className="credential-label">Customer rating</span>
               </div>
-              <div className="service-card">
-                <div className="service-image">
-                  <img
-                    src="https://images.pexels.com/photos/6338827/pexels-photo-6338827.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
-                    alt="Flat Roofing Maintenance"
-                  />
-                </div>
-                <div className="service-content">
-                  <h3 className="section-subtitle">Flat Roofing</h3>
-                  <p className="section-content">
-                    Expert TPO and EPDM membrane applications for commercial and
-                    modern residential properties.
-                  </p>
-                  <a href="#">
-                    <div className="btn-link">
-                      <span>Learn More</span>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div className="service-card">
-                <div className="service-image">
-                  <img
-                    src="https://images.pexels.com/photos/33501308/pexels-photo-33501308.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
-                    alt="Roof Repair in Progress"
-                  />
-                </div>
-                <div className="service-content">
-                  <h3 className="section-subtitle">Roof Repairs</h3>
-                  <p className="section-content">
-                    Quick response for leaks, missing shingles, and structural
-                    maintenance.
-                  </p>
-                  <a href="#">
-                    <div className="btn-link">
-                      <span>Learn More</span>
-                    </div>
-                  </a>
-                </div>
+              <div className="credential-item">
+                <span className="credential-num">A+</span>
+                <span className="credential-label">BBB profile</span>
               </div>
             </div>
-            <div className="carousel-controls">
-              <button id="prevBtn" className="carousel-btn prev">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <path d="M19 12H5m7-7l-7 7l7 7"></path>
-                </svg>
-              </button>
-              <div id="carouselDots" className="carousel-dots"></div>
-              <button id="nextBtn" className="carousel-btn next">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <path d="M5 12h14m-7-7l7 7l-7 7"></path>
-                </svg>
-              </button>
+            <div className="credentials-meta">
+              <p className="credentials-licenses">
+                AZ ROC #334455 · Registrar of Contractors License CR‑42‑123456 ·
+                City of Phoenix Contractor Reg. PCM‑778899 · OSHA 10‑hr trained
+                foremen on every SlatePeak Commercial crew · GL & WC on file —
+                certificate available on request.
+              </p>
+              <p className="credentials-secondary-services">
+                Supporting scope: Seamless gutters &amp; downspouts · Storm
+                response &amp; tarping · Coatings · Skylights &amp; penetration
+                flashings · Attic ventilation packages · HOA compliance
+                inspections · Drone-assisted documentation.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section id="services" className="services-chunk-section">
+          <div className="carousel-header">
+            <h2 className="section-title">Specialized Roofing Services</h2>
+            <p className="section-content">
+              Professional roofing solutions tailored to your property — every
+              system below is engineered, installed, and warrantied by our ironclad crew.
+            </p>
+          </div>
+          <div className="services-grid-chunk">
+            <div className="service-card">
+              <div className="service-image">
+                <img
+                  src="https://images.pexels.com/photos/33404248/pexels-photo-33404248.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
+                  alt="Asphalt shingle installation"
+                />
+              </div>
+              <div className="service-content">
+                <div className="service-card-head">
+                  <div className="service-card-icon">
+                    <ServiceRoofIcon />
+                  </div>
+                  <h3 className="section-subtitle">
+                    Asphalt shingle roofing
+                  </h3>
+                </div>
+                <p className="section-content">
+                  Versatile, durable, cost-effective membranes for pitched
+                  residential envelopes with Class A fire-ready assemblies when
+                  required.
+                </p>
+                <a href="/#trust-credentials">
+                  <div className="btn-link">
+                    <span>Licensing snapshot</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div className="service-card">
+              <div className="service-image">
+                <img
+                  src="https://images.pexels.com/photos/19187101/pexels-photo-19187101.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
+                  alt="Standing seam metal roof"
+                />
+              </div>
+              <div className="service-content">
+                <div className="service-card-head">
+                  <div className="service-card-icon">
+                    <ServiceRoofIcon />
+                  </div>
+                  <h3 className="section-subtitle">Metal roofing</h3>
+                </div>
+                <p className="section-content">
+                  Architectural standing seam profiles with radiant-barrier-ready
+                  underlayment for Arizona heat loads plus wind-uplift hardware.
+                </p>
+                <a href="/gallery">
+                  <div className="btn-link">
+                    <span>Metal gallery</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div className="service-card">
+              <div className="service-image">
+                <img
+                  src="https://images.pexels.com/photos/11467876/pexels-photo-11467876.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
+                  alt="Tile roof installation"
+                />
+              </div>
+              <div className="service-content">
+                <div className="service-card-head">
+                  <div className="service-card-icon">
+                    <ServiceRoofIcon />
+                  </div>
+                  <h3 className="section-subtitle">Tile roofing</h3>
+                </div>
+                <p className="section-content">
+                  Precision-set clay/concrete assemblies with ASTM-rated flashings —
+                  engineered for uplift and monsoon runoff control.
+                </p>
+                <a href="/#reviews">
+                  <div className="btn-link">
+                    <span>Homeowner reactions</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div className="service-card">
+              <div className="service-image">
+                <img
+                  src="https://images.pexels.com/photos/6338827/pexels-photo-6338827.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
+                  alt="Flat membrane roofing"
+                />
+              </div>
+              <div className="service-content">
+                <div className="service-card-head">
+                  <div className="service-card-icon">
+                    <ServiceRoofIcon />
+                  </div>
+                  <h3 className="section-subtitle">Flat &amp; low-slope</h3>
+                </div>
+                <p className="section-content">
+                  Reinforced TPO/EPDM build-ups with tapered insulation decks,
+                  crickets, drains, and walk-pad integrations for rooftop MEP traffic.
+                </p>
+                <a href="/#estimate-wizard">
+                  <div className="btn-link">
+                    <span>Plan a rooftop walk</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div className="service-card">
+              <div className="service-image">
+                <img
+                  src="https://images.pexels.com/photos/33501308/pexels-photo-33501308.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
+                  alt="Roof leak repair technician"
+                />
+              </div>
+              <div className="service-content">
+                <div className="service-card-head">
+                  <div className="service-card-icon">
+                    <ServiceRoofIcon />
+                  </div>
+                  <h3 className="section-subtitle">Emergency repairs</h3>
+                </div>
+                <p className="section-content">
+                  Rapid leak isolation, uplifted shingle re-secures, fascia
+                  rebuilds — documentation delivered for HOA and insurance filings.
+                </p>
+                <a href="/#reviews">
+                  <div className="btn-link">
+                    <span>Emergency case studies</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div className="service-card">
+              <div className="service-image">
+                <img
+                  src="https://images.pexels.com/photos/221027/pexels-photo-221027.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
+                  alt="Architect reviewing roof plans"
+                />
+              </div>
+              <div className="service-content">
+                <div className="service-card-head">
+                  <div className="service-card-icon">
+                    <ServiceRoofIcon />
+                  </div>
+                  <h3 className="section-subtitle">
+                    Replacement planning
+                  </h3>
+                </div>
+                <p className="section-content">
+                  Tear-off sequencing, salvage inspections, phased staging for occupied
+                  buildings, and cradle-to-grave waste manifests for LEED-minded owners.
+                </p>
+                <a href="/#process">
+                  <div className="btn-link">
+                    <span>See our playbook</span>
+                  </div>
+                </a>
+              </div>
             </div>
           </div>
         </section>
@@ -698,14 +747,14 @@ const Home = (props) => {
                 >
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                 </svg>
-                <span className="phone-number">(555) 123-4567</span>
+                <span className="phone-number">(555) 766-3464</span>
               </div>
               <button
                 type="button"
                 onClick={openWizard}
                 className="btn btn-accent btn-lg sticky-cta-btn"
               >
-                <span>Get Free Estimate</span>
+                <span>Get an estimate</span>
               </button>
             </div>
           </div>
@@ -728,20 +777,6 @@ opacity: 0;}}
             <Script
               html={`<script defer data-name="slatepeak-interactions">
 (function(){
-  const track = document.getElementById("servicesTrack")
-  const nextBtn = document.getElementById("nextBtn")
-  const prevBtn = document.getElementById("prevBtn")
-
-  if (track && nextBtn && prevBtn) {
-    nextBtn.addEventListener("click", () => {
-      track.scrollBy({ left: 340, behavior: "smooth" })
-    })
-
-    prevBtn.addEventListener("click", () => {
-      track.scrollBy({ left: -340, behavior: "smooth" })
-    })
-  }
-
   const observerOptions = {
     threshold: 0.1,
   }
@@ -755,7 +790,7 @@ opacity: 0;}}
     })
   }, observerOptions)
 
-  document.querySelectorAll(".service-card, .stat-card, .photo-card, .process-step, .review-card").forEach((el) => {
+  document.querySelectorAll(".service-card, .stat-card, .photo-card, .process-step, .review-card, .credential-item").forEach((el) => {
     el.style.opacity = "0"
     el.style.transform = "translateY(20px)"
     el.style.transition = "all 0.6s ease-out"

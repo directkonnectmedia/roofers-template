@@ -16,10 +16,19 @@ const Footer = (props) => {
                   <span className="footer-logo-sub">Roofing</span>
                 </div>
                 <p className="footer-description section-content">
-                  Premium roofing solutions crafted with precision and
-                  integrity. From residential repairs to commercial
-                  installations, we protect what matters most.
+                  Heavy-duty commercial and residential roofing engineered for Arizona
+                  heat loads, uplift, and monsoon runoff — detailed estimates,
+                  phased crews, warranties you can read before we lift a hammer.
                 </p>
+                <div className="footer-license-block section-content">
+                  <p className="footer-license-line">
+                    AZ ROC #334455 · CR‑42‑123456 · City of Phoenix PCM‑778899
+                  </p>
+                  <p className="footer-license-line footer-license-muted">
+                    GL & WC on file • OSHA-trained foremen • Certificate of insurance
+                    by request
+                  </p>
+                </div>
                 <div className="footer-socials">
                   <a href="#">
                     <div aria-label="Facebook" className="footer-social-link">
@@ -250,9 +259,9 @@ const Footer = (props) => {
                         ></path>
                       </svg>
                     </div>
-                    <a href="tel:15557528373">
+                    <a href="tel:+15557663464">
                       <div className="footer-link">
-                        <span>(555) SLATE-PEAK</span>
+                        <span>(555) 766-3464</span>
                       </div>
                     </a>
                   </div>
@@ -381,7 +390,7 @@ const Footer = (props) => {
                 <div className="footer-cta-wrapper">
                   <a href="#">
                     <div className="footer-cta btn btn-primary btn-lg">
-                      <span>Get Free Estimate</span>
+                      <span>Get an estimate</span>
                     </div>
                   </a>
                 </div>
@@ -389,9 +398,7 @@ const Footer = (props) => {
             </div>
             <div className="footer-bottom">
               <div className="footer-copyright">
-                <span>
-                  &amp;copy; 2026 SlatePeak Roofing. All rights reserved.
-                </span>
+                <span>© 2026 SlatePeak Roofing. All rights reserved.</span>
               </div>
               <div className="footer-legal">
                 <a href="#">
