@@ -27,8 +27,8 @@ const HOME_REVIEW_SLIDES = [
   },
   {
     photo: {
-      src: 'https://images.pexels.com/photos/8716850/pexels-photo-8716850.jpeg?auto=compress&cs=tinysrgb&w=1920',
-      alt: 'Colonial-style home with new terracotta clay tile roofing and trimmed eaves.',
+      src: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1920&q=80',
+      alt: 'Residential home with new terracotta-style roofing tiles and trim.',
     },
     quote:
       'New clay barrel tiles, drip-edge detail, and rake trim finished ahead of our HOA inspector.',
@@ -191,8 +191,8 @@ const Home = (props) => {
             <div className="service-card">
               <div className="service-image">
                 <img
-                  src="https://images.pexels.com/photos/259593/pexels-photo-259593.jpeg?auto=compress&cs=tinysrgb&w=1920"
-                  alt="Residential home with charcoal asphalt shingle roof, full exterior and landscaping visible."
+                  src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80"
+                  alt="Residential home with asphalt shingle roof and clean exterior."
                   className="service-photo-frame service-photo-frame--asphalt"
                 />
               </div>
@@ -205,8 +205,8 @@ const Home = (props) => {
             <div className="service-card">
               <div className="service-image">
                 <img
-                  src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1920"
-                  alt="Modern residential home with gray standing-seam metal roof, trees and full facade."
+                  src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?auto=format&fit=crop&w=1920&q=80"
+                  alt="Modern residential home with gray metal roof and full facade."
                   className="service-photo-frame service-photo-frame--metal"
                 />
               </div>
